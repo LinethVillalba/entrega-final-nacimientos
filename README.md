@@ -3,7 +3,10 @@
 **Machine Learning · NRC 1484 · Universidad Tecnológica de Bolívar · 2026-II**
 Profesor: Jorge Luis Villalba Acevedo
 
-**Autoras:** Luisa Fernanda Acosta Romero, Isabel Sofia Buelvas de la Hoz, María José Espitatela Julio y Lineth Villalba Dominiquett.
+**Autoras:** * Luisa Fernanda Acosta Romero - T00082202
+             * Isabel Sofia Buelvas de la Hoz - T00077937
+             * María José Espitatela Julio - T00038486
+             * Lineth Villalba Dominiquett - T00083377
 
 ## Pregunta del trabajo
 
