@@ -1,0 +1,984 @@
+{
+ "general": {
+  "version_contrato": "1.0",
+  "generado": "2026-11-25",
+  "semilla": 82202,
+  "versiones": {
+   "scikit-learn": "1.9.1",
+   "pandas": "3.1.1",
+   "numpy": "2.5.4",
+   "joblib": "1.6.0"
+  },
+  "version_sklearn_usada_al_generar": "1.9.1",
+  "momento_de_uso": "última consulta prenatal (antes del parto)",
+  "codigos_sin_informacion": {
+   "NUMCONSUL": [
+    "99"
+   ],
+   "EDAD_MADRE": [
+    "99"
+   ],
+   "N_EMB": [
+    "99"
+   ],
+   "N_HIJOSV": [
+    "99"
+   ],
+   "EDAD_PADRE": [
+    "999"
+   ],
+   "NIV_EDUM": [
+    "99"
+   ],
+   "NIV_EDUP": [
+    "99"
+   ],
+   "EST_CIVM": [
+    "9"
+   ],
+   "SEG_SOCIAL": [
+    "9"
+   ],
+   "MUL_PARTO": [
+    "9"
+   ],
+   "IDPERTET": [
+    "9"
+   ],
+   "ULTCURMAD": [
+    "99"
+   ],
+   "ULTCURPAD": [
+    "99"
+   ]
+  },
+  "columnas": [
+   "SEXO",
+   "NUMCONSUL",
+   "MUL_PARTO",
+   "IDPERTET",
+   "EDAD_MADRE",
+   "EST_CIVM",
+   "NIV_EDUM",
+   "ULTCURMAD",
+   "CODPTORE",
+   "AREA_RES",
+   "N_HIJOSV",
+   "N_EMB",
+   "SEG_SOCIAL",
+   "EDAD_PADRE",
+   "NIV_EDUP",
+   "ULTCURPAD"
+  ],
+  "verificacion": {
+   "cesarea": {
+    "registros": 101756,
+    "dif_max_probabilidad": 4.440892098500626e-16,
+    "clases_iguales": 1.0
+   },
+   "bajo_peso": {
+    "registros": 101756,
+    "dif_max_probabilidad": 1.1102230246251565e-16,
+    "clases_iguales": 1.0
+   },
+   "tiempo_gestacion": {
+    "registros": 101756,
+    "min": 30.623571130670637,
+    "max": 41.661881136436214
+   }
+  }
+ },
+ "modelos": {
+  "cesarea": {
+   "archivo": "modelos/modelo_cesarea.joblib",
+   "sha256": "6913cea47290f109d451b643ec5e0c2f42512960438de75872bcc6ac709c6a17",
+   "tamano_mb": 17.75,
+   "estimador": "RandomForestClassifier",
+   "parametros": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "class_weight": null,
+    "criterion": "gini",
+    "max_depth": null,
+    "max_features": 0.3,
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 25,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 100,
+    "n_jobs": -1,
+    "oob_score": false,
+    "random_state": 82202,
+    "verbose": 0,
+    "warm_start": false
+   },
+   "tipo": "clasificacion",
+   "columnas": [
+    "SEXO",
+    "NUMCONSUL",
+    "MUL_PARTO",
+    "IDPERTET",
+    "EDAD_MADRE",
+    "EST_CIVM",
+    "NIV_EDUM",
+    "ULTCURMAD",
+    "CODPTORE",
+    "AREA_RES",
+    "N_HIJOSV",
+    "N_EMB",
+    "SEG_SOCIAL",
+    "EDAD_PADRE",
+    "NIV_EDUP",
+    "ULTCURPAD"
+   ],
+   "numericas": {
+    "NUMCONSUL": {
+     "mediana_imputacion": 7.0,
+     "escalado": false,
+     "rango_entrenamiento": {
+      "min": 0.0,
+      "p01": 0.0,
+      "p99": 13.0,
+      "max": 25.0,
+      "faltantes": 0.0
+     }
+    },
+    "N_HIJOSV": {
+     "mediana_imputacion": 2.0,
+     "escalado": false,
+     "rango_entrenamiento": {
+      "min": 1.0,
+      "p01": 1.0,
+      "p99": 6.0,
+      "max": 17.0,
+      "faltantes": 0.0
+     }
+    },
+    "N_EMB": {
+     "mediana_imputacion": 2.0,
+     "escalado": false,
+     "rango_entrenamiento": {
+      "min": 1.0,
+      "p01": 1.0,
+      "p99": 7.0,
+      "max": 20.0,
+      "faltantes": 1.2284408628568621e-05
+     }
+    },
+    "EDAD_PADRE": {
+     "mediana_imputacion": 30.0,
+     "escalado": false,
+     "rango_entrenamiento": {
+      "min": 12.0,
+      "p01": 17.0,
+      "p99": 53.0,
+      "max": 82.0,
+      "faltantes": 0.0032381701144906885
+     }
+    }
+   },
+   "categoricas": {
+    "SEXO": {
+     "codigos": [
+      "1",
+      "2",
+      "3"
+     ],
+     "acepta_faltante": false,
+     "referencia": null
+    },
+    "MUL_PARTO": {
+     "codigos": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     "acepta_faltante": false,
+     "referencia": null
+    },
+    "IDPERTET": {
+     "codigos": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ],
+     "acepta_faltante": false,
+     "referencia": null
+    },
+    "EDAD_MADRE": {
+     "codigos": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+     ],
+     "acepta_faltante": false,
+     "referencia": null
+    },
+    "EST_CIVM": {
+     "codigos": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ],
+     "acepta_faltante": true,
+     "referencia": null
+    },
+    "NIV_EDUM": {
+     "codigos": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06",
+      "07",
+      "08",
+      "09",
+      "10",
+      "11",
+      "12",
+      "13"
+     ],
+     "acepta_faltante": true,
+     "referencia": null
+    },
+    "ULTCURMAD": {
+     "codigos": [
+      "0",
+      "1",
+      "10",
+      "11",
+      "12",
+      "13",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+     ],
+     "acepta_faltante": true,
+     "referencia": null
+    },
+    "CODPTORE": {
+     "codigos": [
+      "05",
+      "08",
+      "11",
+      "13",
+      "15",
+      "17",
+      "18",
+      "19",
+      "20",
+      "23",
+      "25",
+      "27",
+      "41",
+      "44",
+      "47",
+      "50",
+      "52",
+      "54",
+      "63",
+      "66",
+      "68",
+      "70",
+      "73",
+      "76",
+      "81",
+      "85",
+      "86",
+      "88",
+      "91",
+      "94",
+      "95",
+      "97",
+      "99"
+     ],
+     "acepta_faltante": true,
+     "referencia": null
+    },
+    "AREA_RES": {
+     "codigos": [
+      "1",
+      "2",
+      "3"
+     ],
+     "acepta_faltante": true,
+     "referencia": null
+    },
+    "SEG_SOCIAL": {
+     "codigos": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+     ],
+     "acepta_faltante": false,
+     "referencia": null
+    },
+    "NIV_EDUP": {
+     "codigos": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06",
+      "07",
+      "08",
+      "09",
+      "10",
+      "11",
+      "12",
+      "13"
+     ],
+     "acepta_faltante": true,
+     "referencia": null
+    },
+    "ULTCURPAD": {
+     "codigos": [
+      "0",
+      "1",
+      "10",
+      "11",
+      "12",
+      "13",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+     ],
+     "acepta_faltante": true,
+     "referencia": null
+    }
+   },
+   "necesita_clase_OneHotRefModa": false,
+   "categoria_desconocida": "vector de ceros (ninguna categoría marcada)",
+   "umbral": 0.5,
+   "modelo": "rf",
+   "clase_positiva": 1,
+   "desempeno_prueba": {
+    "roc_auc": 0.7231500724435175,
+    "accuracy": 0.6606686583592122,
+    "precision": 0.6758081976608435,
+    "recall": 0.6231260030531961,
+    "f1": 0.6483987577007281
+   },
+   "hiperparametros": {
+    "n_estimators": 100,
+    "min_samples_leaf": 25,
+    "max_features": 0.3
+   },
+   "n_ajuste_final": 407020,
+   "prevalencia_entrenamiento": 0.502127659574468
+  },
+  "bajo_peso": {
+   "archivo": "modelos/modelo_bajo_peso.joblib",
+   "sha256": "6b212ff8868ec1f855f23d3d406ba7920066ea820c163947d612f5893df87f2f",
+   "tamano_mb": 0.0,
+   "estimador": "LogisticRegression",
+   "parametros": {
+    "C": 1000000000000.0,
+    "class_weight": null,
+    "dual": false,
+    "fit_intercept": true,
+    "intercept_scaling": 1,
+    "l1_ratio": 0.0,
+    "max_iter": 5000,
+    "n_jobs": null,
+    "penalty": "deprecated",
+    "random_state": null,
+    "solver": "lbfgs",
+    "tol": 0.0001,
+    "verbose": 0,
+    "warm_start": false
+   },
+   "tipo": "clasificacion",
+   "columnas": [
+    "SEXO",
+    "NUMCONSUL",
+    "MUL_PARTO",
+    "IDPERTET",
+    "EDAD_MADRE",
+    "EST_CIVM",
+    "NIV_EDUM",
+    "ULTCURMAD",
+    "CODPTORE",
+    "AREA_RES",
+    "N_HIJOSV",
+    "N_EMB",
+    "SEG_SOCIAL",
+    "EDAD_PADRE",
+    "NIV_EDUP",
+    "ULTCURPAD"
+   ],
+   "numericas": {
+    "NUMCONSUL": {
+     "mediana_imputacion": 7.0,
+     "escalado": true,
+     "rango_entrenamiento": {
+      "min": 0.0,
+      "p01": 0.0,
+      "p99": 13.0,
+      "max": 25.0,
+      "faltantes": 0.0
+     }
+    },
+    "N_HIJOSV": {
+     "mediana_imputacion": 2.0,
+     "escalado": true,
+     "rango_entrenamiento": {
+      "min": 1.0,
+      "p01": 1.0,
+      "p99": 6.0,
+      "max": 17.0,
+      "faltantes": 0.0
+     }
+    },
+    "N_EMB": {
+     "mediana_imputacion": 2.0,
+     "escalado": true,
+     "rango_entrenamiento": {
+      "min": 1.0,
+      "p01": 1.0,
+      "p99": 7.0,
+      "max": 20.0,
+      "faltantes": 1.2284408628568621e-05
+     }
+    },
+    "EDAD_PADRE": {
+     "mediana_imputacion": 30.0,
+     "escalado": true,
+     "rango_entrenamiento": {
+      "min": 12.0,
+      "p01": 17.0,
+      "p99": 53.0,
+      "max": 82.0,
+      "faltantes": 0.0032381701144906885
+     }
+    }
+   },
+   "categoricas": {
+    "SEXO": {
+     "codigos": [
+      "1",
+      "2",
+      "3"
+     ],
+     "acepta_faltante": false,
+     "referencia": "1"
+    },
+    "MUL_PARTO": {
+     "codigos": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     "acepta_faltante": false,
+     "referencia": "1"
+    },
+    "IDPERTET": {
+     "codigos": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ],
+     "acepta_faltante": false,
+     "referencia": "6"
+    },
+    "EDAD_MADRE": {
+     "codigos": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+     ],
+     "acepta_faltante": false,
+     "referencia": "3"
+    },
+    "EST_CIVM": {
+     "codigos": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ],
+     "acepta_faltante": true,
+     "referencia": "1"
+    },
+    "NIV_EDUM": {
+     "codigos": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06",
+      "07",
+      "08",
+      "09",
+      "10",
+      "11",
+      "12",
+      "13"
+     ],
+     "acepta_faltante": true,
+     "referencia": "04"
+    },
+    "ULTCURMAD": {
+     "codigos": [
+      "0",
+      "1",
+      "10",
+      "11",
+      "12",
+      "13",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+     ],
+     "acepta_faltante": true,
+     "referencia": "11"
+    },
+    "CODPTORE": {
+     "codigos": [
+      "05",
+      "08",
+      "11",
+      "13",
+      "15",
+      "17",
+      "18",
+      "19",
+      "20",
+      "23",
+      "25",
+      "27",
+      "41",
+      "44",
+      "47",
+      "50",
+      "52",
+      "54",
+      "63",
+      "66",
+      "68",
+      "70",
+      "73",
+      "76",
+      "81",
+      "85",
+      "86",
+      "88",
+      "91",
+      "94",
+      "95",
+      "97",
+      "99"
+     ],
+     "acepta_faltante": true,
+     "referencia": "11"
+    },
+    "AREA_RES": {
+     "codigos": [
+      "1",
+      "2",
+      "3"
+     ],
+     "acepta_faltante": true,
+     "referencia": "1"
+    },
+    "SEG_SOCIAL": {
+     "codigos": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+     ],
+     "acepta_faltante": false,
+     "referencia": "2"
+    },
+    "NIV_EDUP": {
+     "codigos": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06",
+      "07",
+      "08",
+      "09",
+      "10",
+      "11",
+      "12",
+      "13"
+     ],
+     "acepta_faltante": true,
+     "referencia": "04"
+    },
+    "ULTCURPAD": {
+     "codigos": [
+      "0",
+      "1",
+      "10",
+      "11",
+      "12",
+      "13",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+     ],
+     "acepta_faltante": true,
+     "referencia": "11"
+    }
+   },
+   "necesita_clase_OneHotRefModa": false,
+   "categoria_desconocida": "vector de ceros (igual que la categoría de referencia)",
+   "umbral": 0.16,
+   "modelo": "logit",
+   "clase_positiva": 1,
+   "desempeno_prueba": {
+    "roc_auc": 0.6839446364145817,
+    "accuracy": 0.8373560281457605,
+    "precision": 0.2755521961871168,
+    "recall": 0.2928157072735386,
+    "f1": 0.2839217722395292
+   },
+   "hiperparametros": {},
+   "n_ajuste_final": 407020,
+   "prevalencia_entrenamiento": 0.1101149820647634
+  },
+  "tiempo_gestacion": {
+   "archivo": "modelos/modelo_tiempo_gestacion.joblib",
+   "sha256": "d2a6fce99c174d1c2c11bcef41e182d1590acfcbf86321b78314d134cf97a4d9",
+   "tamano_mb": 0.0,
+   "estimador": "LinearRegression",
+   "parametros": {
+    "copy_X": true,
+    "fit_intercept": true,
+    "n_jobs": null,
+    "positive": false,
+    "tol": 1e-06
+   },
+   "tipo": "regresion",
+   "columnas": [
+    "SEXO",
+    "NUMCONSUL",
+    "MUL_PARTO",
+    "IDPERTET",
+    "EDAD_MADRE",
+    "EST_CIVM",
+    "NIV_EDUM",
+    "ULTCURMAD",
+    "CODPTORE",
+    "AREA_RES",
+    "N_HIJOSV",
+    "N_EMB",
+    "SEG_SOCIAL",
+    "EDAD_PADRE",
+    "NIV_EDUP",
+    "ULTCURPAD"
+   ],
+   "numericas": {
+    "NUMCONSUL": {
+     "mediana_imputacion": 7.0,
+     "escalado": true,
+     "rango_entrenamiento": {
+      "min": 0.0,
+      "p01": 0.0,
+      "p99": 13.0,
+      "max": 25.0,
+      "faltantes": 0.0
+     }
+    },
+    "N_HIJOSV": {
+     "mediana_imputacion": 2.0,
+     "escalado": true,
+     "rango_entrenamiento": {
+      "min": 1.0,
+      "p01": 1.0,
+      "p99": 6.0,
+      "max": 17.0,
+      "faltantes": 0.0
+     }
+    },
+    "N_EMB": {
+     "mediana_imputacion": 2.0,
+     "escalado": true,
+     "rango_entrenamiento": {
+      "min": 1.0,
+      "p01": 1.0,
+      "p99": 7.0,
+      "max": 20.0,
+      "faltantes": 1.2284408628568621e-05
+     }
+    },
+    "EDAD_PADRE": {
+     "mediana_imputacion": 30.0,
+     "escalado": true,
+     "rango_entrenamiento": {
+      "min": 12.0,
+      "p01": 17.0,
+      "p99": 53.0,
+      "max": 82.0,
+      "faltantes": 0.0032381701144906885
+     }
+    }
+   },
+   "categoricas": {
+    "SEXO": {
+     "codigos": [
+      "1",
+      "2",
+      "3"
+     ],
+     "acepta_faltante": false,
+     "referencia": "1"
+    },
+    "MUL_PARTO": {
+     "codigos": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     "acepta_faltante": false,
+     "referencia": "1"
+    },
+    "IDPERTET": {
+     "codigos": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ],
+     "acepta_faltante": false,
+     "referencia": "6"
+    },
+    "EDAD_MADRE": {
+     "codigos": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+     ],
+     "acepta_faltante": false,
+     "referencia": "3"
+    },
+    "EST_CIVM": {
+     "codigos": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ],
+     "acepta_faltante": true,
+     "referencia": "1"
+    },
+    "NIV_EDUM": {
+     "codigos": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06",
+      "07",
+      "08",
+      "09",
+      "10",
+      "11",
+      "12",
+      "13"
+     ],
+     "acepta_faltante": true,
+     "referencia": "04"
+    },
+    "ULTCURMAD": {
+     "codigos": [
+      "0",
+      "1",
+      "10",
+      "11",
+      "12",
+      "13",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+     ],
+     "acepta_faltante": true,
+     "referencia": "11"
+    },
+    "CODPTORE": {
+     "codigos": [
+      "05",
+      "08",
+      "11",
+      "13",
+      "15",
+      "17",
+      "18",
+      "19",
+      "20",
+      "23",
+      "25",
+      "27",
+      "41",
+      "44",
+      "47",
+      "50",
+      "52",
+      "54",
+      "63",
+      "66",
+      "68",
+      "70",
+      "73",
+      "76",
+      "81",
+      "85",
+      "86",
+      "88",
+      "91",
+      "94",
+      "95",
+      "97",
+      "99"
+     ],
+     "acepta_faltante": true,
+     "referencia": "11"
+    },
+    "AREA_RES": {
+     "codigos": [
+      "1",
+      "2",
+      "3"
+     ],
+     "acepta_faltante": true,
+     "referencia": "1"
+    },
+    "SEG_SOCIAL": {
+     "codigos": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+     ],
+     "acepta_faltante": false,
+     "referencia": "2"
+    },
+    "NIV_EDUP": {
+     "codigos": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06",
+      "07",
+      "08",
+      "09",
+      "10",
+      "11",
+      "12",
+      "13"
+     ],
+     "acepta_faltante": true,
+     "referencia": "04"
+    },
+    "ULTCURPAD": {
+     "codigos": [
+      "0",
+      "1",
+      "10",
+      "11",
+      "12",
+      "13",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+     ],
+     "acepta_faltante": true,
+     "referencia": "11"
+    }
+   },
+   "necesita_clase_OneHotRefModa": false,
+   "categoria_desconocida": "vector de ceros (igual que la categoría de referencia)",
+   "semanas_por_intervalo": {
+    "1": 21.0,
+    "2": 24.5,
+    "3": 32.5,
+    "4": 39.5,
+    "5": 42.0
+   }
+  }
+ }
+}
