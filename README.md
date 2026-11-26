@@ -63,7 +63,7 @@ La variable `T_GES` (tiempo de gestación) no se conoce antes del parto, así qu
 
 **Sobre el Random Forest final de cesárea.** Las tablas de validación cruzada muestran `max_features = sqrt` y `min_samples_leaf = 5` en cada pliegue. El modelo guardado en `modelos/modelo_cesarea.joblib` tiene `n_estimators = 100`, `max_features = 0.3` y `min_samples_leaf = 25`. No es una contradicción: como describe el artículo, al elegir el modelo final se repite la búsqueda sobre toda la base de validación cruzada (entrenamiento más validación, 407 020 registros) y el modelo se reentrena con esos datos, por lo que los hiperparámetros pueden diferir de los de los pliegues. Quedan registrados en `resultados/prueba_final.csv`.
 
-## Apéndices de la decisión (E4)
+## Apéndices de la decisión
 
 Dentro del artículo, después de los apéndices de resultados, van tres apéndices que se generan con el mismo código y salen de `resultados/`:
 
