@@ -1,3 +1,0 @@
-objetivo,variante,modelo,umbral,reentrenado_con_validacion,n_ajuste_final,hiperparametros,best_score_final,roc_auc,accuracy,precision,recall,f1,costo,costo_05,costo_pstar,costo_trivial,base_mayoritaria,fp,fn
-cesarea,cesarea,rf,0.5,True,407020,"{""n_estimators"": 100, ""min_samples_leaf"": 25, ""max_features"": 0.3}",0.715199299414038,0.7231500724435175,0.6606686583592122,0.6758081976608435,0.6231260030531961,0.6483987577007281,34529,34529,34529,50662,0.5021227249498801,15273,19256
-bajo_peso,bajo_peso,logit,0.16,True,407020,{},NA,0.6839446364145817,0.8373560281457605,0.27555219618711685,0.2928157072735386,0.28392177223952925,48246,49982,48146,56025,0.8898836432249695,8626,7924
